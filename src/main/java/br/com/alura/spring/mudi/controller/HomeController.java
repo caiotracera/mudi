@@ -1,6 +1,5 @@
 package br.com.alura.spring.mudi.controller;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.EntityManager;
