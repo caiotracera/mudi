@@ -35,6 +35,7 @@ public class HomeController {
     List<Pedido> pedidos = pedidoRepository.findByStatus(StatusPedido.valueOf(status.toUpperCase()));
     ModelAndView mv = new ModelAndView("home");
     mv.addObject("pedidos", pedidos);
+    mv.addObject("status", status);
 
     return mv;
   }
