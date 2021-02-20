@@ -1,11 +1,8 @@
 package br.com.alura.spring.mudi.repository;
 
+import br.com.alura.spring.mudi.model.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.alura.spring.mudi.model.Pedido;
-
 @Repository
-public interface PedidoRepository extends JpaRepository<Pedido, Long>{
-}
-
+public interface PedidoRepository extends JpaRepository<Pedido, Long> {}
