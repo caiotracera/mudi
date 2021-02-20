@@ -1,14 +1,13 @@
 package br.com.alura.spring.mudi.controller;
 
+import br.com.alura.spring.mudi.dto.RequisicaoNovoPedido;
+import br.com.alura.spring.mudi.model.Pedido;
+import br.com.alura.spring.mudi.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import br.com.alura.spring.mudi.dto.RequisicaoNovoPedido;
-import br.com.alura.spring.mudi.model.Pedido;
-import br.com.alura.spring.mudi.repository.PedidoRepository;
 
 @Controller
 @RequestMapping("pedido")
