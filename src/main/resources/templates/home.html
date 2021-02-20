@@ -38,11 +38,11 @@
             <div class="col-12 col-sm-8 mb-3">
               <div class="row mb-3">
                 <div class="col-md-5">
-                  Valor: <span th:text="${pedido.price}">200,99</span>
+                  Valor: <span th:if="${pedido.price != null}" th:text="${'R$ ' + #numbers.formatDecimal(pedido.price,3,'POINT',2,'COMMA')}">200,99</span>
                 </div>
                 <div class="col-md-7">
                   Data de entega:
-                  <span th:text="${pedido.deliveryDate}">10/02/2020</span>
+                  <span th:text="${#temporals.format(pedido.deliveryDate, 'dd/MM/yyyy')}"></span>
                 </div>
               </div>
 
