@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.alura.spring.mudi.model.Pedido;
 import br.com.alura.spring.mudi.repository.PedidoRepository;
@@ -14,15 +15,16 @@ import br.com.alura.spring.mudi.repository.PedidoRepository;
 public class HomeController {
 
   @Autowired
-  private PedidoRepository repository;
+  private PedidoRepository pedidoRepository;
   
   @GetMapping("/home")
-  public String home(Model model) {
+  public ModelAndView home(Model model) {
 
     
-    List<Pedido> pedidos = repository.recuperaTodosOsPedidos();
-    model.addAttribute("pedidos", pedidos);
+    List<Pedido> pedidos = pedidoRepository.findAll();
+    ModelAndView mv = new ModelAndView("home");
+    mv.addObject("pedidos", pedidos);
 
-    return "home";
+    return mv;
   }
 }
