@@ -1,11 +1,20 @@
 package br.com.alura.spring.mudi.dto;
 
 import br.com.alura.spring.mudi.model.Pedido;
+import javax.validation.constraints.NotBlank;
 
 public class RequisicaoNovoPedido {
+
+  @NotBlank
   private String nomeProduto;
+
+  @NotBlank
   private String urlProduto;
+
+  @NotBlank
   private String urlImagem;
+
+  @NotBlank
   private String descricao;
 
   public String getNomeProduto() {
@@ -40,14 +49,13 @@ public class RequisicaoNovoPedido {
     this.descricao = descricao;
   }
 
-public Pedido toPedido() {
-	Pedido pedido = new Pedido();
-  pedido.setProductName(nomeProduto);
-  pedido.setDescription(descricao);
-  pedido.setProductUrl(urlProduto);
-  pedido.setImageUrl(urlImagem);
+  public Pedido toPedido() {
+    Pedido pedido = new Pedido();
+    pedido.setProductName(nomeProduto);
+    pedido.setDescription(descricao);
+    pedido.setProductUrl(urlProduto);
+    pedido.setImageUrl(urlImagem);
 
-  return pedido;
-}
-
+    return pedido;
+  }
 }
