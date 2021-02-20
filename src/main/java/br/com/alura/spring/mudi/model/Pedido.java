@@ -3,6 +3,8 @@ package br.com.alura.spring.mudi.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,6 +22,9 @@ public class Pedido {
   private String productUrl;
   private String imageUrl;
   private String description;
+
+  @Enumerated(EnumType.STRING)
+  private StatusPedido status;
 
   public String getProductName() {
     return this.productName;
